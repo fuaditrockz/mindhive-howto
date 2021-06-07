@@ -5,8 +5,15 @@
 .MindhiveNavbar {
   height: 100px;
   width: 100%;
-  position: absolute;
-  right: 0;
+  padding: 30px 100px;
+}
+
+.MindhiveNavbar_right {
+  text-align: right;
+}
+
+.MindhiveNavbar_left {
+  text-align: left;
 }
 
 .MindhiveJumbotron {
@@ -14,15 +21,46 @@
   background-image: url('../public/banner.png');
   background-repeat: no-repeat;
   background-size: cover;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
+  padding-right: 100px;
+  padding-left: 100px;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 70px;
   height: 400px;
+  margin-top: -100px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.MindhiveJumbotron h1 {
+  color: white;
+}
+
+.MindhiveMenu {
+  background-color: #fff;
+  height: 80px;
+  padding: 0 100px;
+  display: flex;
+  align-items: center;
+}
+
+.MindhiveMenu h4 {
+  margin-bottom: 0;
+}
+
+.menu_icon {
+  margin-right: 20px;
+}
+
+.menu_text {
+  border-bottom: #C99E66 solid 4px;
+  height: 100%;
+  padding: 25px 0;
 }
 
 @media only screen and (min-width: 1400px) {
-  
+  .MindhiveNavbar {
+    padding: 30px 100px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -33,5 +71,8 @@
   /* phones */
   .MindhiveJumbotron {
     background-image: url('../public/mobile-banner.png');
+  }
+  .MindhiveNavbar {
+    padding: 30px 20px;
   }
 }
