@@ -1,9 +1,13 @@
-import Image from 'next/image'
+import { useState } from 'react'
 import { MdSearch, MdMenu } from 'react-icons/md'
-import { Container, Row, Col, Jumbotron, Button } from 'react-bootstrap'
+import { Container, Row, Col, Jumbotron, Button, Modal } from 'react-bootstrap'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const [showMenu, setShowMenu] = useState(false)
+  const handleClose = () => setShowMenu(false)
+  const handleShow = () => setShowMenu(true)
+
   return (
     <Container fluid className={styles.MindhiveContainer}>
       <Row className={styles.MindhiveNavbar}>
@@ -25,12 +29,55 @@ export default function Home() {
       </Jumbotron>
       <div className={styles.MindhiveMenu}>
         <div className={styles.menu_icon}>
+        <a onClick={handleShow}>
           <MdMenu color='#000' size={20} />
+        </a>
         </div>
         <div className={styles.menu_text}>
           <h4>Creating A Discussion</h4>
         </div>
       </div>
+      <Modal show={showMenu} onHide={handleClose}>
+        <Modal.Body>
+          <ul>
+            <li>
+              <a href="#">What is Mindhive?</a>
+            </li>
+            <li>
+              <a href="#">Setting up your account</a>
+            </li>
+            <li>
+              <a href="#">Creating a discussion</a>
+            </li>
+            <li>
+              <a href="#">Hosting and curating a discussion</a>
+            </li>
+            <li>
+              <a href="#">Joining a discussion</a>
+            </li>
+            <li>
+              <a href="#">Highlighting text/ideate</a>
+            </li>
+            <li>
+              <a href="#">Inviting and building your team</a>
+            </li>
+            <li>
+              <a href="#">Driving engagement</a>
+            </li>
+            <li>
+              <a href="#">Generating a report</a>
+            </li>
+          </ul>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   )
 }
