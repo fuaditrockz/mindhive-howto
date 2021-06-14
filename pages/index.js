@@ -37,9 +37,9 @@ export default function Home() {
           <h4>Creating A Discussion</h4>
         </div>
       </div>
-      <Modal show={showMenu} onHide={handleClose}>
+      <Modal show={showMenu} onHide={handleClose} size="sm">
         <Modal.Body>
-          <ul>
+          <ul className={styles.MindhiveModalMenu}>
             <li>
               <a href="#">What is Mindhive?</a>
             </li>
@@ -72,9 +72,6 @@ export default function Home() {
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
