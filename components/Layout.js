@@ -42,11 +42,12 @@ export default function Layout({
           <h4>{title}</h4>
         </div>
       </div>
-      <Row>
-          <Col>
-             {children}
-          </Col>
-      </Row>
+      <div className={styles.MindhiveBody}>
+        {children}
+      </div>
+      <div className={styles.MindhiveFooter}>
+       
+      </div>
       <Modal show={showMenu} onHide={handleClose} size="sm">
         <Modal.Body>
           <ul className={styles.MindhiveModalMenu}>
@@ -54,8 +55,8 @@ export default function Layout({
                 <Link href="/">
                     <a
                       style={{
-                          pointerEvents: route === '/' ? 'none' : null,
-                          color: route === '/' ? 'inherit' : '#a2a2a2'
+                          pointerEvents: route !== '/' ? null : 'none',
+                          color: route !== '/' ? 'inherit' : '#a2a2a2'
                       }}
                     >
                         What is Mindhive?
@@ -66,8 +67,8 @@ export default function Layout({
                 <Link href="/setting-up-your-account">
                     <a
                       style={{
-                          pointerEvents: route === '/setting-up-your-account' ? 'none' : null,
-                          color: route === '/setting-up-your-account' ? 'inherit' : '#a2a2a2'
+                          pointerEvents: route !== '/setting-up-your-account' ? null : 'none',
+                          color: route !== '/setting-up-your-account' ? 'inherit' : '#a2a2a2'
                       }}
                     >
                         Setting up your account
